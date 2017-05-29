@@ -1,31 +1,11 @@
 {% extends "base.html" %}
 
-{% block content %}
-<nav>
-	<span class="prev">
-		{% if prevPost %}
-			<a href='{{ ROOT_URL }}/{{ prevPost.path }}'>
-				&laquo; {{ prevPost.title }}
-			</a>
-		{% else %}
-			First post
-		{% endif %}
-	</span>
-	
-	<span>
-		<a href="/">Home</a>
-	</span>
+{% block title %} {{ title }} {% endblock %}
 
-	<span class="next">
-		{% if nextPost %}
-			<a href='{{ ROOT_URL }}/{{ nextPost.path }}'>
-				{{ nextPost.title }} &raquo;
-			</a>
-		{% else %}
-			Last post
-		{% endif %}
-	</span>
-</nav>
+{% block navblog %}active{% endblock %}
+
+{% block content %}
+
 <article>
 	<header>
 		<h1>{{ title }}</h1>
@@ -36,4 +16,27 @@
 		Thanks for reading. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 	</footer>
 </article>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+	  {% if prevPost %}
+			<li class="page-item"><a class="page-link" href='{{ POSTS_PATH }}/{{ prevPost.path }}'>
+				&laquo; {{ prevPost.title }}
+			</a></li>
+		{% else %}
+			<li class="page-item disabled"><a class="page-link" href='#'>
+				First post
+			</a></li>
+		{% endif %}
+    <li class="page-item"><a class="page-link" href="{% url '/blog.html' %}">Home</a></li>
+		{% if nextPost %}
+			<li class="page-item"><a class="page-link" href='{{ POSTS_PATH }}/{{ nextPost.path }}'>
+				{{ nextPost.title }} &raquo;
+			</a></li>
+		{% else %}
+			<li class="page-item disabled"><a class="page-link" href='#'>
+				Last Post
+			</a></li>
+		{% endif %}
+  </ul>
+</nav>
 {% endblock %}

@@ -1,0 +1,19 @@
+title: Made this static site with Cactus
+author: Michael Magan
+date: 13-05-2017
+
+{% extends "post.html" %}
+{% block body %}
+
+{% load markup %}
+{% filter markdown %}
+This is my new site that made using the wonderful 
+[cactus](https://github.com/eudicots/Cactus). If you like django but don't
+think its worth hosting a personal website like this cactus gives you 
+django templating and a really simple set up. I will add more here another day.
+
+
+## Header
+
+{% endfilter %}
+{% endblock %}

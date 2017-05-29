@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block navblog %}active{% endblock %}
+{% block title %} Blog {% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="blog-header">
+			<div class="container">
+			<h1 class="blog-title">Blog</h1>
+			<p class="lead blog-description">This is where I write!</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+
+	<div class="row">
+
+			<div class="col-sm-8 blog-main">
+				{% for post in posts %}
+				<div class="blog-post"> 
+					<h2 class="blog-post-title"><a href='{{ POSTS_PATH }}/{{ post.path }}'>{{ post.title }}</a></h2>
+					<p class="blog-post-meta"> {{ post.date|date:"F j Y" }} by {{ post.author }}</p>
+					<p>
+						{{ post.body|truncatewords_html:30}}
+					</p>
+				</div>
+				{% endfor %}
+			</div><!-- /.blog-main -->
+
+			<div class="col-sm-3 offset-sm-1 blog-sidebar">
+			<div class="sidebar-module sidebar-module-inset">
+				<h4>About</h4>
+				<p>
+					This is my blog about stuff I care about!
+				</p>
+			</div>
+			</div><!-- /.blog-sidebar -->
+
+	</div>
+</div>
+
+{% endblock %}
+

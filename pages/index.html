@@ -1,16 +1,28 @@
 {% extends "base.html" %}
-{% block content %}
-<h1>Hello, welcome to my blog.</h1>
-<h2>This is where I write.</h2>
+{% block title %} Home {% endblock %}
+{% block navblog %}active{% endblock %}
 
-<ul>
-	{% for post in posts %}
-	<li> 
-		<b><a href='{{ ROOT_URL }}/{{ post.path }}'>{{ post.title }}</a></b>
-		by {{ post.author }} at {{ post.date|date:"F j Y" }}<br>
-		{{ post.body|truncatewords_html:30}}
-	</li>
-	{% endfor %}
-</ul>
+
+{% block content %}
+<div class="site-wrapper-inner">
+
+        <div class="cover-container">
+          <div class="inner cover">
+            <h1 class="cover-heading">Product Manger</h1>
+            <p class="lead">
+                for <a href="indeed.com">Indeed.com</a> getting jobs
+                for over two hundred million jobseekers globally. Presented 
+                Indeed Analytics plaform to dozens of large corpoaration including
+                Starbucks, Lyft, {add more here}. Enjoys python pandas for data 
+                analysis. Django for prototyping applications. So kind of a python 
+                guy. Checkout my <a href="{% url '/blog.html' %}">blog</a>.
+            </p>
+            <p class="lead">
+                For more info on my career please 
+                checkout my <a href="https://www.linkedin.com/in/mnmagan/">linkedin</a>.
+            </p>
+          </div>
+        </div>
+      </div>
 
 {% endblock %}
