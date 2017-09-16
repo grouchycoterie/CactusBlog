@@ -12,8 +12,8 @@
 		<h5><time pubdate="pubdate">{{ date|date:"F j, Y" }}</time> by <span class="author">{{ author }}</address></h5>
 	</header>
 		{% block body %}{% endblock %}
-	<footer>
-		Thanks for reading. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	<footer class='sidebar-module-inset'>
+		Thanks for reading. Please feel free to reach out <a href='mailto:{{email}}'>{{ email }}</a> if you have any feedback!
 	</footer>
 </article>
 <nav aria-label="Page navigation example">
