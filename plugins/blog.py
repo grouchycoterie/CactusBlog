@@ -5,6 +5,8 @@ import logging
 ORDER = 999
 POSTS_PATH = 'blog/posts/'
 POSTS = []
+SITE_URL = 'https://magan.info'
+
 
 from django.template import Context
 from django.template.loader import get_template
@@ -84,4 +86,9 @@ def preBuildPage(site, page, context, data):
 		if post['path'] == page.path.split('.')[0]:
 			context.update(post)
 	
+	"""
+	Site URL used by the rss page.
+	"""
+	context['siteURL'] = SITE_URL
+		
 	return context, data
