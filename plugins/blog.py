@@ -6,7 +6,8 @@ ORDER = 999
 POSTS_PATH = 'blog/posts/'
 POSTS = []
 SITE_URL = 'https://magan.info'
-
+EMAIL = 'michael@magan.info'
+SITE_NAME = 'Michael Magan'
 
 from django.template import Context
 from django.template.loader import get_template
@@ -51,6 +52,7 @@ def preBuild(site):
 			postContext = {}
 			postContext['title'] = find('title')
 			postContext['author'] = find('author')
+			postContext['email'] = find('email')
 			postContext['date'] = find('date')
 			postContext['path'] = page.path.split('.')[0]
 			postContext['body'] = getNode(get_template(page.path), name="body")
@@ -90,5 +92,6 @@ def preBuildPage(site, page, context, data):
 	Site URL used by the rss page.
 	"""
 	context['siteURL'] = SITE_URL
-		
+	context['siteName'] = SITE_NAME
+
 	return context, data
