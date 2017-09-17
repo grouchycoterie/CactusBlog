@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title><![CDATA[{{ siteName }}]]></title>
+    <link href="{{ siteURL }}/rss.xml" rel="self"/>
+    <link href="{{ siteURL }}"/>
+    <id>{{ siteURL }}</id>
+    {% for post in posts %}
+    {% if forloop.first %}
+    <updated>{{ post.date|date:"c" }}></updated>
+    <author>
+      <name><![CDATA[{{ post.author }}]]></name>
+      <email><![CDATA[{{ post.email }}]]></email>
+    </author>
+    {% endif %}
+    {% endfor %}
+    <generator uri="{{ siteURL }}"></generator>
+
+  {% for post in posts %}
+  {% if forloop.counter < 20 %}
+  <entry>
+    <title type="html"><![CDATA[{{ post.title }}]]></title>
+    <link href="{{ siteURL }}/{{ post.path }}"/>
+    <updated>{{ post.date|date:"c" }}</updated>
+    <id>{{ siteURL }}/{{ post.path }}</id>
+    <content type="html"><![CDATA[{{ post.body }}]]></content>
+  </entry>
+  {% endif %}
+  {% endfor %}
+</feed>
