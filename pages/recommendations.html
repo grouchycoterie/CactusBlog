@@ -1,0 +1,30 @@
+categories: test, test2
+
+{% extends "base.html" %}
+{% block title %} My Recommendations {% endblock %}
+{% block navrecommendations %}active{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-8">
+        Test
+    </div>
+    <div class="col-4">
+            <li class="toc-entry toc-h2"><a href="#example">Example</a>
+                <ul>
+                <li class="toc-entry toc-h3"><a href="#slides-only">Slides only</a></li>
+                <li class="toc-entry toc-h3"><a href="#with-controls">With controls</a></li>
+                <li class="toc-entry toc-h3"><a href="#with-indicators">With indicators</a>
+                <ul>
+                <li class="toc-entry toc-h4"><a href="#initial-active-element-required">Initial active element required</a></li>
+                </ul>
+                </li>
+                <li class="toc-entry toc-h3"><a href="#with-captions">With captions</a></li>
+                <li class="toc-entry toc-h3"><a href="#first-slide-label">First slide label</a></li>
+                <li class="toc-entry toc-h3"><a href="#second-slide-label">Second slide label</a></li>
+                <li class="toc-entry toc-h3"><a href="#third-slide-label">Third slide label</a></li>
+                </ul>
+                </li>
+    </div>
+</div>
+{% endblock %}
