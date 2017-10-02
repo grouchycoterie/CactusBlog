@@ -3,17 +3,17 @@
 if ! [ -d "../grouchycoterie.github.io" ]; then
   # Control will enter here if grouchycoterie.github.io exists.
   cd ../
-  git clone git@github.com:grouchycoterie/grouchycoterie.github.io.git
+  git clone git@github.com:grouchycoterie/grouchycoterie.github.iogit.git
   cd CactusBlog
 fi
 
-if ! [ -d "env" ]; then
+if ! [ -d "~/.pyenv/versions/env-3.5.4" ]; then
   # Create python virtual env
-  virtualenv -p python3 env
+  pyenv virtualenv 3.5.4 env-3.5.4
 fi
 
 #activate env and install requirements
-source env/bin/activate
+source activate env-3.5.4
 pip install --upgrade pip
 pip install -r requirements.txt
 

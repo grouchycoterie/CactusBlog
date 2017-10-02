@@ -60,8 +60,8 @@ def preBuild(site):
 			# Parse the date into a date object
 			try:
 				postContext['date'] = datetime.datetime.strptime(postContext['date'], '%d-%m-%Y')
-			except Exception, e:
-				logging.warning("Date format not correct for page %s, should be dd-mm-yy\n%s" % (page.path, e))
+			except Exception:
+				logging.warning("Date format not correct for page %s, should be dd-mm-yy" % (page.path))
 				continue
 			
 			POSTS.append(postContext)
@@ -70,7 +70,7 @@ def preBuild(site):
 	POSTS = sorted(POSTS, key=lambda x: x['date'])
 	POSTS.reverse()
 	
-	indexes = xrange(0, len(POSTS))
+	indexes = range(0, len(POSTS))
 	
 	for i in indexes:
 		if i+1 in indexes: POSTS[i]['prevPost'] = POSTS[i+1]
