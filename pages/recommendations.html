@@ -1,30 +1,47 @@
-categories: test, test2
 
 {% extends "base.html" %}
 {% block title %} My Recommendations {% endblock %}
 {% block navrecommendations %}active{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="col-8">
-        Test
-    </div>
-    <div class="col-4">
-            <li class="toc-entry toc-h2"><a href="#example">Example</a>
-                <ul>
-                <li class="toc-entry toc-h3"><a href="#slides-only">Slides only</a></li>
-                <li class="toc-entry toc-h3"><a href="#with-controls">With controls</a></li>
-                <li class="toc-entry toc-h3"><a href="#with-indicators">With indicators</a>
-                <ul>
-                <li class="toc-entry toc-h4"><a href="#initial-active-element-required">Initial active element required</a></li>
-                </ul>
-                </li>
-                <li class="toc-entry toc-h3"><a href="#with-captions">With captions</a></li>
-                <li class="toc-entry toc-h3"><a href="#first-slide-label">First slide label</a></li>
-                <li class="toc-entry toc-h3"><a href="#second-slide-label">Second slide label</a></li>
-                <li class="toc-entry toc-h3"><a href="#third-slide-label">Third slide label</a></li>
-                </ul>
-                </li>
-    </div>
-</div>
+{% load markup %}
+{% filter markdown %}
+I wanted to provide people with a page of my reommendations. These are all services, or advice I take myself.
+
+### Communication
+* Network
+    * [Mint Sim](https://mintsim.com): Not cheapest but I think best value for money. Supports VoLTE and VoWIFI. Easy set up. Simple Pricing. Great website.
+    * [Google Voice](https://voice.google.com/): A bit buggy but cool features. I love texting on a desktop!
+* Phone
+    * OnePlus3: Practically flagship phone but half the price ($400 vs. $800). High quality finish. Close to stock android. Quick charge. Good battery life. Not rugged.
+
+### Banking Services
+* Credit Cards
+    * Chase Sapphire: Best all around credit card. Great set up. Good bonuses. Great customer support. Premium feel. Easy to use Tavel points.
+* Banking Services & Insurance
+    * USAA Insurnace: Best insurance out there. My father in-law (an insurance agent of 20 some years) said they have the best rates for insurance. Easy set up. I have car, rental, personal property, umbrella, and life insurance through them.
+    * USAA Bank: Also a great bank. Best customer service I have experienced. Online check deposit up to 100k (haven’t had to use that yet). Reimburses ATM fees anywhere in the world.
+        * You or a parent, grand parent, or a spouse need to have been in the military to qualify. You can also inherit it as long as your parent or spouse has USAA. If someone in your family qualifies bug them to add you or get them to open a USAA account.
+* Non-Taxable Investing
+    * 401K: No matter who its through you should max out your 401K contributions, but at least the employer match. Thats free money!
+    * Roth or Traditional IRA: Open one. I prefer Traditional IRA since I plan on being financially independent early and plan to convert to Roth before 59 and half.
+    * Roth Conversion Ladder: Important Read.
+    * [Vangaurd](): Has the lowest price indexed funds. You shouldn't buy anything more than 0.2% in expense ratio.
+* Taxable Investing
+    * Betterment: Tax loss harvesting normally offsets the extra expense of using this service over just Vanguard. Simple interface and easy to use.
+    * Coinbase: My investing "gamble" has always been crypto-currency. I think coinbase is by far the easiest for new comers. 
+
+### Entertainment
+* The Library: Super underated. Great place to borrow DVD's and blurays. Its a great option for entertainment needs.
+* Chromecast: Chromecast is the most versital and easy to use of the TV streaming add ons. I had one back when they came out and still as great as they were then. I still use the older version. Unless you have new 4K TV its not worht upgrading.
+
+### Medical & Dental
+* The mouth gaurd thing!
+
+
+
+
+
+
+{% endfilter %}
 {% endblock %}
