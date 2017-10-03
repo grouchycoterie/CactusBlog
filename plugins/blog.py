@@ -8,6 +8,7 @@ POSTS = []
 SITE_URL = 'https://magan.info'
 EMAIL = 'michael@magan.info'
 SITE_NAME = 'Michael Magan'
+TAGS = True
 
 from django.template import Context
 from django.template.loader import get_template
@@ -56,6 +57,7 @@ def preBuild(site):
 			postContext['date'] = find('date')
 			postContext['path'] = page.path.split('.')[0]
 			postContext['body'] = getNode(get_template(page.path), name="body")
+			postContext['tags'] = find('tags').split(',')
 			
 			# Parse the date into a date object
 			try:
