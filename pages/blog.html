@@ -3,50 +3,53 @@
 {% block navblog %}active{% endblock %}
 
 {% block content %}
+<div class="container">
+	<div class="inner cover">
+			<h1 class="cover-heading">About the Blog</h1>
+			<p class="lead">
+					These are my thoughts. You might find articles on (but not limited to) happiness, theology, product mangement, personal finance or whatever is on my mind. I have many interests so I won't pigeon hole my self on my own blog :)
+			</p>
+	</div>
 	<div class="row">
-
-			<div class="col-sm-8 blog-main">
+			<div class="col-md-8 blog-main">
 				{% for post in posts %}
 				<div class="blog-post"> 
 					<h2 class="blog-post-title"><a href='{{ POSTS_PATH }}/{{ post.path }}'>{{ post.title }}</a></h2>
 					<p class="blog-post-meta"> {{ post.date|date:"F j Y" }} by {{ post.author }}</p>
 					<p>
-						{{ post.body|truncatewords_html:30}}
+						{{ post.body|truncatewords_html:post.preview_len}}
 					</p>
 				</div>
 				{% endfor %}
 			</div><!-- /.blog-main -->
 
-			<div class="col-sm-3 offset-sm-1 blog-sidebar">
-			<div class="sidebar-module sidebar-module-inset">
-				<h4>About</h4>
-				<p>
-					This is my blog about stuff I care about!
-				</p>
-				<!-- Begin MailChimp Signup Form -->
+			<div class="col-md-3 offset-sm-1 blog-sidebar">
+				<div class="sidebar-module sidebar-module-inset">
+					<h4>Get my email updates!</h4>
+					<p>These will likely be few and far between :)</p>
+					<!-- Begin MailChimp Signup Form -->
 					<div id="mc_embed_signup">
-					<form action="https://magan.us17.list-manage.com/subscribe/post?u=946a2a071aa913bc25d2025ad&amp;id=1354c49057" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<div class="form-group">
-							<label for="mce-EMAIL">Email Address</label>
-							<input type="email" class="form-control" value="" name="EMAIL" id="mce-EMAIL">
-
+						<form action="https://magan.us17.list-manage.com/subscribe/post?u=946a2a071aa913bc25d2025ad&amp;id=1354c49057" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<div class="form-group">
+								<label for="mce-EMAIL">Email Address</label>
+								<input type="email" class="form-control" value="" name="EMAIL" id="mce-EMAIL">
+							</div>
+							<div class="form-group">
+								<label for="mce-FNAME">First Name</label>
+								<input type="text" class="form-control" name="FNAME" id="mce-FNAME">
+							</div>
+							<div class="form-group">
+								<label for="mce-LNAME">Last Name</label>
+								<input type="text" class="form-control" name="LNAME" id="mce-LNAME">
+							</div>
+							<button type="submit" class="btn btn-primary">Subscribe</button>
+							<p>Get email lists <a href="http://eepurl.com/dfHfof" title="MailChimp - email marketing made easy and fun">here</a>.</p>
+							<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_946a2a071aa913bc25d2025ad_1354c49057" tabindex="-1" value=""></div>						
 						</div>
-						<div class="form-group">
-							<label for="mce-FNAME">First Name</label>
-							<input type="text" class="form-control" name="FNAME" id="mce-FNAME">
-						</div>
-						<div class="form-group">
-							<label for="mce-LNAME">Last Name</label>
-							<input type="text" class="form-control" name="LNAME" id="mce-LNAME">
-						</div>
-						<button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Subscribe</button>
-						<p>Get email lists <a href="http://eepurl.com/dfHfof" title="MailChimp - email marketing made easy and fun">here</a>.</p>
-						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_946a2a071aa913bc25d2025ad_1354c49057" tabindex="-1" value=""></div>						
+						</form>
 					</div>
-					</form>
-					</div>
-				<!--End mc_embed_signup-->
-			</div>
+					<!--End mc_embed_signup-->
+				</div>
 			</div><!-- /.blog-sidebar -->
 
 	</div>

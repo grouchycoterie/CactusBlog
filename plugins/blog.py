@@ -45,6 +45,11 @@ def preBuild(site):
 				c = page.context()
 				if not name in c:
 					logging.info("Missing info '%s' for post %s" % (name, page.path))
+
+					# Default preview length 30
+					if name == 'preview_len':
+						return '30'
+
 					return ''
 				return c.get(name, '')
 			
@@ -56,6 +61,7 @@ def preBuild(site):
 			postContext['date'] = find('date')
 			postContext['path'] = page.path.split('.')[0]
 			postContext['body'] = getNode(get_template(page.path), name="body")
+			postContext['preview_len'] = find('preview_len')
 			
 			# Parse the date into a date object
 			try:
