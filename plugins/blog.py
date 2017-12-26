@@ -62,6 +62,7 @@ def preBuild(site):
 			postContext['path'] = page.path.split('.')[0]
 			postContext['body'] = getNode(get_template(page.path), name="body")
 			postContext['preview_len'] = find('preview_len')
+			postContext['header_img'] = find('header_img')
 			
 			# Parse the date into a date object
 			try:

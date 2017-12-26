@@ -11,6 +11,7 @@
 		<h1>{{ title }}</h1>
 		<h5><time pubdate="pubdate">{{ date|date:"F j, Y" }}</time> by <span class="author">{{ author }}</address></h5>
 	</header>
+		<img src="{{ header_img }}" width="400" align="left" />
 		{% block body %}{% endblock %}
 	<footer class='sidebar-module-inset'>
 		Thanks for reading. Please feel free to reach out <a href='mailto:{{ email }}'>{{ email }}</a> if you have any feedback!

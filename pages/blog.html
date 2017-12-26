@@ -13,6 +13,9 @@
 	<div class="row">
 			<div class="col-md-8 blog-main">
 				{% for post in posts %}
+				{% if post.header_img %}
+					<img src="{{ post.header_img }}" width="150" align="left" />
+				{% endif %}
 				<div class="blog-post"> 
 					<h2 class="blog-post-title"><a href='{{ POSTS_PATH }}/{{ post.path }}'>{{ post.title }}</a></h2>
 					<p class="blog-post-meta"> {{ post.date|date:"F j Y" }} by {{ post.author }}</p>

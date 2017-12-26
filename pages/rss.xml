@@ -23,6 +23,13 @@
     <link href="{{ siteURL }}/{{ post.path }}"/>
     <updated>{{ post.date|date:"c" }}</updated>
     <id>{{ siteURL }}/{{ post.path }}</id>
+    {% if post.header_img %}
+    <image>
+        <title>{{ post.title }}</title>
+        <url>{{ siteURL }}{{ post.header_img }}</url>
+        <link>{{ siteURL }}/{{ post.path }}</link>
+    </image>
+    {% endif %}
     <content type="html"><![CDATA[{{ post.body }}]]></content>
   </entry>
   {% endif %}
