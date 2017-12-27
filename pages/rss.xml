@@ -29,8 +29,10 @@
         <url>{{ siteURL }}{{ post.header_img }}</url>
         <link>{{ siteURL }}/{{ post.path }}</link>
     </image>
-    {% endif %}
+    <content type="html"><![CDATA[<img src="{{ siteURL }}{{ post.header_img }}" width="150" align="left" />{{ post.body }}]]></content>
+    {% else %}
     <content type="html"><![CDATA[{{ post.body }}]]></content>
+    {% endif %}
   </entry>
   {% endif %}
   {% endfor %}
