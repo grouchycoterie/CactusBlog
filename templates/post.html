@@ -40,32 +40,55 @@
 	</div>
 </article>
 
-<div class="container">
-	<div class="row">
-		<div class="offset-md-1"
-		<nav aria-label="Page navigation example">
-		<ul class="pagination">
+<div class="container hidden-sm-down">
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-center ">
 			{% if prevPost %}
-					<li class="page-item"><a class="page-link" href='{{ POSTS_PATH }}/{{ prevPost.path }}'>
-						&laquo; {{ prevPost.title }}
-					</a></li>
-				{% else %}
-					<li class="page-item disabled"><a class="page-link" href='#'>
-						First post
-					</a></li>
-				{% endif %}
+			<li class="page-item"><a class="page-link" href='{{ POSTS_PATH }}/{{ prevPost.path }}'>
+				&laquo; {{ prevPost.title }}
+			</a></li>
+			{% else %}
+			<li class="page-item disabled"><a class="page-link" href='#'>
+				First post
+			</a></li>
+			{% endif %}
 			<li class="page-item"><a class="page-link" href="{% url '/blog.html' %}">Home</a></li>
-				{% if nextPost %}
-					<li class="page-item"><a class="page-link" href='{{ POSTS_PATH }}/{{ nextPost.path }}'>
-						{{ nextPost.title }} &raquo;
-					</a></li>
-				{% else %}
-					<li class="page-item disabled"><a class="page-link" href='#'>
-						Last Post
-					</a></li>
-				{% endif %}
+			{% if nextPost %}
+			<li class="page-item"><a class="page-link" href='{{ POSTS_PATH }}/{{ nextPost.path }}'>
+				{{ nextPost.title }} &raquo;
+			</a></li>
+			{% else %}
+			<li class="page-item disabled"><a class="page-link" href='#'>
+				Last Post
+			</a></li>
+			{% endif %}
 		</ul>
-		</nav>
-	</div>
+	</nav>
+</div>
+
+<div class="container visible-sm-down">
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-center ">
+			{% if prevPost %}
+			<li class="page-item"><a class="page-link" href='{{ POSTS_PATH }}/{{ prevPost.path }}'>
+				&laquo; Previous Post
+			</a></li>
+			{% else %}
+			<li class="page-item disabled"><a class="page-link" href='#'>
+				First post
+			</a></li>
+			{% endif %}
+			<li class="page-item"><a class="page-link" href="{% url '/blog.html' %}">Home</a></li>
+			{% if nextPost %}
+			<li class="page-item"><a class="page-link" href='{{ POSTS_PATH }}/{{ nextPost.path }}'>
+				Next Post &raquo;
+			</a></li>
+			{% else %}
+			<li class="page-item disabled"><a class="page-link" href='#'>
+				Last Post
+			</a></li>
+			{% endif %}
+		</ul>
+	</nav>
 </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 body > .container {
-    padding: 60px 15px 20px;
+    padding: 0px 15px 20px;
 }
 
 .blog-title {
@@ -38,7 +38,8 @@ article {
 	padding-bottom: 20px;
 }
 img {
-	padding: 10px;
+	padding-right: 10px;
+	max-width: 100%;
 }
 
 blockquote {
