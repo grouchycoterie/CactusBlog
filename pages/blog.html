@@ -14,10 +14,16 @@
 			<div class="col-md-8 blog-main">
 				{% for post in posts %}
 				{% if post.header_img %}
-					<img src="{{ post.header_img }}" width="150" align="left" />
+				<a href='{{ POSTS_PATH }}/{{ post.path }}'>
+					<img src="{{ post.header_img }}" width="150" align="left" class="hidden-sm-down blog-img" />
+				</a>
+
 				{% endif %}
 				<div class="blog-post"> 
 					<h2 class="blog-post-title"><a href='{{ POSTS_PATH }}/{{ post.path }}'>{{ post.title }}</a></h2>
+					<a href='{{ POSTS_PATH }}/{{ post.path }}'>
+						<img src="{{ post.header_img }}" class="hidden-sm-up blog-img-responsive" />
+					</a>
 					<p class="blog-post-meta"> {{ post.date|date:"F j Y" }} by {{ post.author }}</p>
 					<p>
 						{{ post.body|truncatewords_html:post.preview_len}}

@@ -49,3 +49,13 @@ blockquote {
 	padding: 5px;
     margin: auto 15px;
 }
+
+.blog-img-responsive {
+	float: none;
+    width: 100%;
+}
+
+.blog-img {
+	width:150px;
+	float: left;
+}
