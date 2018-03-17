@@ -5,40 +5,37 @@
 {% block navblog %}active{% endblock %}
 
 {% block content %}
-<article>
-	<header>
-		<h1>{{ title }}</h1>
-		<h5><time pubdate="pubdate">{{ date|date:"F j, Y" }}</time> by <span class="author">{{ author }}</address></h5>
-	</header>
-	<div class="container">
-		{% if header_img %}
-		<img src="{{ header_img }}" width="400" align="left" />
-		{% endif %}
-		{% block body %}{% endblock %}
-		<div class="row">
-			<div class="col-md-6 offset-md-3 blog-sidebar">
-				<div class="sidebar-module sidebar-module-inset">
-					<h4>Get my email updates!</h4>
-					<p>These will likely be few and far between :)</p>
-					<!-- Begin MailChimp Signup Form -->
-					<div id="mc_embed_signup">
-						<form action="https://magan.us17.list-manage.com/subscribe/post?u=946a2a071aa913bc25d2025ad&amp;id=1354c49057" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-							<div class="form-group">
-								<label for="mce-EMAIL">Email Address</label>
-								<input type="email" class="form-control" value="" name="EMAIL" id="mce-EMAIL">
-							</div>
-							<button type="submit" class="btn btn-primary">Subscribe</button>
-							<p>Get email lists <a href="http://eepurl.com/dfHfof" title="MailChimp - email marketing made easy and fun">here</a>.</p>
-							<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_946a2a071aa913bc25d2025ad_1354c49057" tabindex="-1" value=""></div>						
+<div class='row'>
+	<div class='offset-md-2 col-md-8'>
+		<article>
+			<header>
+				<h1>{{ title }}</h1>
+				<h5><time pubdate="pubdate">{{ date|date:"F j, Y" }}</time> by <span class="author">{{ author }}</address></h5>
+			</header>
+				{% if header_img %}
+				<img src="{{ header_img }}" class="article-img" width="100%" align="left" />
+				{% endif %}
+				{% block body %}{% endblock %}
+			
+			<div class="sidebar-module sidebar-module-inset">
+				<h4>Get my email updates!</h4>
+				<p>These will likely be few and far between :)</p>
+				<!-- Begin MailChimp Signup Form -->
+				<div id="mc_embed_signup">
+					<form action="https://magan.us17.list-manage.com/subscribe/post?u=946a2a071aa913bc25d2025ad&amp;id=1354c49057" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+						<div class="form-group">
+							<label for="mce-EMAIL">Email Address</label>
+							<input type="email" class="form-control" value="" name="EMAIL" id="mce-EMAIL">
 						</div>
-						</form>
-					</div>
-					<!--End mc_embed_signup-->
+						<button type="submit" class="btn btn-primary">Subscribe</button>
+						<p>Get email lists <a href="http://eepurl.com/dfHfof" title="MailChimp - email marketing made easy and fun">here</a>.</p>
+						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_946a2a071aa913bc25d2025ad_1354c49057" tabindex="-1" value=""></div>						
+					</form>
 				</div>
-			</div>
-		</div>
+				<!--End mc_embed_signup-->
+		</article>
 	</div>
-</article>
+</div>
 
 <div class="container hidden-sm-down">
 	<nav aria-label="Page navigation example">
